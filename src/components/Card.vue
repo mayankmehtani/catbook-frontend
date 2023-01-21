@@ -6,7 +6,7 @@
 
         <div id="cat-info">
             <div id="field-headers">
-                <div v-if="name">Name: </div>
+                <div>Name: </div>
                 <div>Age: </div>
 
 
@@ -16,8 +16,18 @@
                     <div>Date Neutered: </div>
                     <div>Date Released: </div>
                 </div>
-                <div>Lane: </div>
-                <div>Phase: </div>
+
+                <div v-if="lane">
+                    <div>Lane: </div>
+                </div>
+
+                <div v-if="phase">
+                    <div>Phase: </div>
+                </div>
+
+                <div v-if="appearance">
+                    <div>Appearance</div>
+                </div>
             </div>
 
             <div id="field-values">
@@ -26,13 +36,40 @@
  
                 <div v-if="neuteredStatus">
                     <div>{{ neuteredStatus }}</div>
-                    <div>{{ dateCaught }} </div>
-                    <div>{{ dateNeutered }} </div>
-                    <div>{{ dateReleased }}</div>
-                </div>
-                <div>{{ Lane }}</div>
-                <div>{{ Phase }}</div>
                 
+                    <div v-if="dateCaught"> 
+                        <div>{{ dateCaught }} </div>
+                    </div>
+                    <div v-else>
+                        <div>Not Known</div>
+                    </div>
+
+                    <div v-if="dateNeutered">
+                        <div>{{ dateNeutered }} </div>
+                    </div>
+                    <div v-else>
+                        <div>Not Known</div>
+                    </div>
+
+                    <div v-if="dateReleased">
+                        <div>{{ dateReleased }}</div>
+                    </div>
+                    <div v-else>
+                        <div>Not Known</div>
+                    </div>
+
+                    <div v-if="lane">
+                        <div>{{ lane }}</div>
+                    </div>
+
+                    <div v-if="phase">
+                        <div>{{ phase }}</div>
+                    </div>
+                </div>
+
+                <div v-if="appearance">
+                    <div>{{ appearance }}</div>
+                </div>
             </div>
         </div>
     </div>
@@ -45,6 +82,42 @@ export default {
         name: {
             type: String,
             required: true
+        },
+        age: {
+            type: Number,
+            required: false
+        },
+        neuteredStatus: {
+            type: String,
+            required: false
+        },
+        dateCaught: {
+            type: Date,
+            required: false
+        },
+        dateNeutered: {
+            type: Date,
+            required: false
+        },
+        dateReleased: {
+            type: Date,
+            required: false
+        },
+        lane: {
+            type: Number,
+            required: false
+        },
+        phase: {
+            type: Number,
+            required: false
+        },
+        villa: {
+            type: Number,
+            required: false
+        },
+        appearance: {
+            type: String,
+            required: false
         }
     }
 };
