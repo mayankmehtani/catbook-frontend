@@ -24,9 +24,9 @@
       },
       components: {Card},
       async beforeMount () {
-        let res = await axios.get("http://0.0.0.0:8000/cat/1/");
+        let res = await axios.get("http://0.0.0.0:8000/cats/1/");
         let response_data = res["data"];
-
+        
         // information on cat
         this.name = response_data["name"];
         this.age = response_data["age_in_months"];
