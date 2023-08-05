@@ -32,12 +32,12 @@
 
             <div id="field-values">
                 <div>{{ name }}</div>
-                <div>{{ age }} months</div>
+                <div>{{ age }} Months</div>
  
                 <div v-if="neuteredStatus">
                     <div>{{ neuteredStatus }}</div>
                 
-                    <div v-if="dateCaught"> 
+                    <div v-if="dateCaught">
                         <div>{{ dateCaught }} </div>
                     </div>
                     <div v-else>
@@ -126,19 +126,18 @@ export default {
 
 
 <style scoped>
-#pic > img {
-    height: 370px;
-    width: 500px;
-}
+    #pic > img {
+        height: 370px;
+        width: 500px;
+    }
 
-#cat-info {
-    flex-direction: row;
-    display: flex;
-    justify-content: space-evenly;
-}
+    #cat-info {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-evenly;
+    }
 
-#field-values {
-    text-align: right;
-    flex-direction: ;
-}
+    #field-values {
+        text-align: right;
+    }
 </style>

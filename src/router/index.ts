@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-// import CatInfo from '../views/CatInfo.vue'
+import CatInfo from '../views/CatInfo.vue'
 
 Vue.use(VueRouter)
 
@@ -23,9 +23,9 @@ const router = new VueRouter({
       component: () => import('../views/AboutView.vue')
     },
     {
-      path: '/moh',
-      name: 'moh',
-      component: () => import('../views/CatInfo.vue')
+      path: '/cats/:id',
+      component: CatInfo,
+      props: true
     }
   ]
 })
