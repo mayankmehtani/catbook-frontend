@@ -1,5 +1,5 @@
 <template>
-    <Card :name="name" :age="age" :neuteredStatus="neuteredStatus"/>
+    <Card :name="name" :age="age" :neuteredStatus="neuteredStatus" :description="description"/>
 </template>
 
 <script lang="ts">
@@ -19,7 +19,8 @@
         neuteredStatus: "",
         dateCaught: "",
         dateNeutered: "",
-        dateReleased: ""
+        dateReleased: "",
+        description: ""
       }
     },
     components: {Card},
@@ -38,6 +39,7 @@
       this.dateCaught = response_data["date_caught"];
       this.dateReleased = response_data["date_released"];
       this.dateNeutered = response_data["date_neutered"];
+      this.description = response_data["appearance"] || ""
     }
   }
 </script>
